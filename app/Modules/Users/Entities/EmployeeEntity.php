@@ -2,7 +2,8 @@
 
 namespace App\Modules\Users;
 use App\Modules\Common\Money;
-use App\Modules\Infrastructure\BankEntity;
+use App\Modules\Bank\BankEntity;
+
 use App\Modules\Infrastructure\BankOfficeEntity;
 
 class EmployeeEntity

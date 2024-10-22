@@ -5,7 +5,8 @@ namespace App\Modules\Accounts\Commands;
 use App\Modules\Accounts\CreditAccountEntity;
 use App\Modules\Accounts\PaymentAccountEntity;
 use App\Modules\Common\Money;
-use App\Modules\Infrastructure\BankEntity;
+use App\Modules\Bank\BankEntity;
+
 use App\Modules\Users\ClientEntity;
 use App\Modules\Users\EmployeeEntity;
 use Illuminate\Console\Command;

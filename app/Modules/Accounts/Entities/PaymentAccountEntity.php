@@ -2,7 +2,8 @@
 
 namespace App\Modules\Accounts;
 use App\Modules\Accounts\PaymentAccount;
-use App\Modules\Infrastructure\BankEntity;
+use App\Modules\Bank\BankEntity;
+
 use App\Modules\Users\ClientEntity;
 use App\Modules\Common\Money;
 

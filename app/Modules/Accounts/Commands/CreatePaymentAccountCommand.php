@@ -3,7 +3,8 @@
 namespace App\Modules\Accounts\Commands;
 
 use App\Modules\Accounts\PaymentAccountEntity;
-use App\Modules\Infrastructure\BankEntity;
+use App\Modules\Bank\BankEntity;
+
 use App\Modules\Users\ClientEntity;
 use Illuminate\Console\Command;
 

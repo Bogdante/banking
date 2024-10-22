@@ -4,7 +4,8 @@ namespace App\Modules\Infrastructure\Commands;
 
 use App\Modules\Common\Money;
 use App\Modules\Infrastructure\BankAtmEntity;
-use App\Modules\Infrastructure\BankEntity;
+use App\Modules\Bank\BankEntity;
+
 use Illuminate\Console\Command;
 
 class CreateBankAtmCommand extends Command

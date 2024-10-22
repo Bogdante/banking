@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Modules\Infrastructure;
-use App\Modules\Infrastructure\Bank;
-use App\Modules\Infrastructure\BankEntity;
+use App\Modules\Bank\Bank;
+
+use App\Modules\Bank\BankEntity;
+
 use App\Modules\Common\Money;
 
 class BankAtmEntity
