@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Modules\Infrastructure\Commands;
+namespace App\Modules\Bank\Commands;
 
 use App\Modules\Common\Money;
-use App\Modules\Infrastructure\BankEntity;
+use App\Modules\Bank\BankEntity;
 use Illuminate\Console\Command;
 
 class CreateBankCommand extends Command
