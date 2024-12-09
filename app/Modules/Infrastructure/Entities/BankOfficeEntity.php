@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Modules\Infrastructure;
+namespace App\Modules\Infrastructure\Entities;
 use App\Modules\Common\Money;
 use App\Modules\Bank\BankEntity;
+use App\Modules\Infrastructure\Models\BankOffice;
 
 
 class BankOfficeEntity

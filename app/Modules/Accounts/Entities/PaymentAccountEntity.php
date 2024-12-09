@@ -16,7 +16,7 @@ class PaymentAccountEntity
         $this->paymentAccount = $paymentAccount;
     }
 
-    private static function create(
+    public static function create(
         ClientEntity $client,
         BankEntity $bank
     ): self {

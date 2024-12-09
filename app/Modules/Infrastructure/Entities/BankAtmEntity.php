@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Modules\Infrastructure;
+namespace App\Modules\Infrastructure\Entities;
+use App\Modules\Infrastructure\Models\BankAtm;
 use App\Modules\Bank\Bank;
-
 use App\Modules\Bank\BankEntity;
 
 use App\Modules\Common\Money;
@@ -72,6 +72,11 @@ class BankAtmEntity
         return $bankAtm;
     }
 
+    public static function getById(int $id): self
+    {
+        return new self(BankAtm::find($id));
+    }
+
     public function getRelatedBank(): BankEntity
     {
         return BankEntity::getById($this->getBankId());
@@ -80,5 +85,10 @@ class BankAtmEntity
     public function getBankId(): int
     {
         return $this->bankAtm->bank_id;
+    }
+
+    public function getAmount(): Money
+    {
+        return Money::createFromString($this->bankAtm->amount);
     }
 }

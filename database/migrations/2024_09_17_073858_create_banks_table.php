@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('banks', function (Blueprint $table) {
             $table->id();
-            $table->stirng('name');
+            $table->string('name');
             $table->integer('num_offices');
             $table->integer('num_atms');
             $table->integer('num_employees');

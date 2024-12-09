@@ -27,7 +27,7 @@ class BankEntity {
                 'rating' => rand(1, 100),
                 'amount' => $amount->toString(),
                 'percentage_rate' => $percentageRate->toString()
-            ])  
+            ])
         );
     }
 

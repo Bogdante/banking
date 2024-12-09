@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Modules\Users;
+namespace App\Modules\Users\Entities;
 use App\Modules\Common\Money;
 use App\Modules\Bank\BankEntity;
 
-use App\Modules\Infrastructure\BankOfficeEntity;
+use App\Modules\Infrastructure\Entities\BankOfficeEntity;
+use App\Modules\Users\Employee;
+use App\Modules\Users\UserEntity;
 
 class EmployeeEntity
 {
@@ -62,7 +64,6 @@ class EmployeeEntity
         $employee = self::create(
             $email,
             $password,
-
             $name,
             $birthday,
             $role,
