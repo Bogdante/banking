@@ -102,6 +102,260 @@
                     }
                 }
             }
+        },
+        "/api/employees": {
+            "post": {
+                "tags": [
+                    "Employees"
+                ],
+                "summary": "Создаёт нового сотрудника",
+                "operationId": "1c40b0acaa46ab1b2b637f4c9e34b92e",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "description": "Employee's email address",
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "john.doe@example.com"
+                                    },
+                                    "password": {
+                                        "description": "Employee's password",
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "P@$$wOrd"
+                                    },
+                                    "name": {
+                                        "description": "Employee's full name",
+                                        "type": "string",
+                                        "example": "John Doe"
+                                    },
+                                    "birthday": {
+                                        "description": "Employee's birthday",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "1990-05-10"
+                                    },
+                                    "bank_id": {
+                                        "description": "ID of the bank the employee works for",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "is_remote": {
+                                        "description": "Whether the employee is a remote worker",
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "bank_office_id": {
+                                        "description": "ID of the bank office the employee works for",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "can_credit": {
+                                        "description": "Whether the employee can approve credits",
+                                        "type": "boolean",
+                                        "example": false
+                                    },
+                                    "monthly_salary": {
+                                        "description": "Employee's monthly salary",
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 5000
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Employee created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "employee has been created"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "error"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Database error: ..."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "field": {
+                                                "type": "string",
+                                                "example": "email"
+                                            },
+                                            "message": {
+                                                "type": "string",
+                                                "example": "The email has already been taken."
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/clients": {
+            "post": {
+                "tags": [
+                    "Clients"
+                ],
+                "summary": "Создаёт нового сотрудника",
+                "operationId": "4dd507bccb94edaf1fb0fbec1091dfd5",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "description": "Client's email address",
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "john.doe@example.com"
+                                    },
+                                    "password": {
+                                        "description": "Client's password",
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "P@$$wOrd"
+                                    },
+                                    "name": {
+                                        "description": "Clients's full name",
+                                        "type": "string",
+                                        "example": "John Doe"
+                                    },
+                                    "job": {
+                                        "description": "Client's job",
+                                        "type": "string",
+                                        "example": "Taxist"
+                                    },
+                                    "month_salary": {
+                                        "description": "Client's month salary",
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": "40.000"
+                                    },
+                                    "credit_rate": {
+                                        "description": "Client's credit rate",
+                                        "type": "integer",
+                                        "example": "40"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Employee created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "employee has been created"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "error"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Database error: ..."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "field": {
+                                                "type": "string",
+                                                "example": "email"
+                                            },
+                                            "message": {
+                                                "type": "string",
+                                                "example": "The email has already been taken."
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "tags": [
@@ -112,6 +366,14 @@
         {
             "name": "Bank Infrastructure",
             "description": "Bank Infrastructure"
+        },
+        {
+            "name": "Employees",
+            "description": "Employees"
+        },
+        {
+            "name": "Clients",
+            "description": "Clients"
         }
     ]
 }

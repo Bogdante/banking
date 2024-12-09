@@ -34,7 +34,7 @@ class EmployeeEntity
         $user = UserEntity::create($email, $password);
 
         return new self(
-    Employee::create([
+            Employee::create([
                 'user_id' => $user->getId(),
                 'name' => $name,
                 'birthday' => $birthday,

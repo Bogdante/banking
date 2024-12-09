@@ -91,6 +91,11 @@ class BankOfficeEntity
         return new self(BankOffice::where('name', $name)->first());
     }
 
+    public static function getById(int $id): self
+    {
+        return new self(BankOffice::where('id', $id)->first());
+    }
+
     public function getRelatedBank(): BankEntity
     {
         return BankEntity::getById($this->getBankId());
