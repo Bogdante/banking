@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Modules\Users;
-use App\Modules\Users\Client;
+namespace App\Modules\Users\Entities;
+use App\Modules\Users\Models\Client;
 use App\Modules\Common\Money;
 
-class ClientEntity 
+class ClientEntity
 {
     private Client $client;
 
@@ -16,7 +16,7 @@ class ClientEntity
     public static function create(
         string $email,
         string $password,
-        
+
         string $name,
         string $job,
         Money $monthSalary,

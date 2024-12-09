@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Users;
+namespace App\Modules\Users\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -20,5 +20,5 @@ class Employee extends Model
         'can_credit',
         'month_salary',
     ];
-    
+
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Modules\Accounts;
-use App\Modules\Accounts\CreditAccount;
+namespace App\Modules\Accounts\Entities;
+use App\Modules\Accounts\Models\CreditAccount;
 use App\Modules\Bank\BankEntity;
-use App\Modules\Users\ClientEntity;
-use App\Modules\Users\EmployeeEntity;
+use App\Modules\Users\Entities\ClientEntity;
+use App\Modules\Users\Entities\EmployeeEntity;
 use App\Modules\Common\Money;
 
 class CreditAccountEntity
@@ -37,16 +37,16 @@ class CreditAccountEntity
                 'start_credit' => $startCredit,
                 'end_credit' => $endCredit,
                 'month_credit' => $monthCredit,
-                'credit_sum' => $creditSum->toString(), 
+                'credit_sum' => $creditSum->toString(),
                 'month_pay' => $monthPay->toString(),
-                'percentage_rate' => $percantageRate->toString(), 
+                'percentage_rate' => $percantageRate->toString(),
                 'employee_id' => $employee->getId(),
                 'payment_account_id' => $paymentAccount->getId()
             ])
         );
     }
 
-    
+
 
     public function getRelatedBank(): BankEntity
     {

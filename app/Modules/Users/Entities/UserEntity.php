@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Modules\Users;
+namespace App\Modules\Users\Entities;
 use Illuminate\Support\Facades\Hash;
-use App\Modules\Users\User;
+use App\Modules\Users\Models\User;
 
 class UserEntity
 {

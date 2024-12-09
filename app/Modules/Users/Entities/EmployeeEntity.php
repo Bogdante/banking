@@ -5,8 +5,8 @@ use App\Modules\Common\Money;
 use App\Modules\Bank\BankEntity;
 
 use App\Modules\Infrastructure\Entities\BankOfficeEntity;
-use App\Modules\Users\Employee;
-use App\Modules\Users\UserEntity;
+use App\Modules\Users\Models\Employee;
+use App\Modules\Users\Entities\UserEntity;
 
 class EmployeeEntity
 {

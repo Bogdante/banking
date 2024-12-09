@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Modules\Accounts;
-use App\Modules\Accounts\PaymentAccount;
+namespace App\Modules\Accounts\Entities;
+use App\Modules\Accounts\Models\PaymentAccount;
 use App\Modules\Bank\BankEntity;
 
-use App\Modules\Users\ClientEntity;
+use App\Modules\Users\Entities\ClientEntity;
 use App\Modules\Common\Money;
 
 class PaymentAccountEntity
