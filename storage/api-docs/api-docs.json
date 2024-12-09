@@ -16,6 +16,104 @@
         }
     },
     "paths": {
+        "/api/payment-accounts": {
+            "post": {
+                "tags": [
+                    "Accounts"
+                ],
+                "summary": "Создаёт новый платёжный счёт",
+                "operationId": "bf3327884d9309daca9598fa35905e2f",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "client_id": {
+                                        "description": "id банка",
+                                        "type": "integer",
+                                        "format": "integer",
+                                        "example": "1"
+                                    },
+                                    "password": {
+                                        "description": "id клиента",
+                                        "type": "integer",
+                                        "format": "integer",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Account created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "account has been created"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "error"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Database error: ..."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "field": {
+                                                "type": "string",
+                                                "example": "email"
+                                            },
+                                            "message": {
+                                                "type": "string",
+                                                "example": "The email has already been taken."
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/banks": {
             "get": {
                 "tags": [
@@ -243,7 +341,7 @@
                 "tags": [
                     "Clients"
                 ],
-                "summary": "Создаёт нового сотрудника",
+                "summary": "Создаёт нового клиента банка",
                 "operationId": "4dd507bccb94edaf1fb0fbec1091dfd5",
                 "requestBody": {
                     "required": true,
@@ -359,6 +457,10 @@
         }
     },
     "tags": [
+        {
+            "name": "Accounts",
+            "description": "Accounts"
+        },
         {
             "name": "Bank",
             "description": "Bank"

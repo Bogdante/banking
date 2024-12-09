@@ -108,7 +108,7 @@ class UserController extends Controller
     /**
      * @OA\Post(
      *     path="/api/clients",
-     *     summary="Создаёт нового сотрудника",
+     *     summary="Создаёт нового клиента банка",
      *     tags={"Clients"},
      *     @OA\RequestBody(
      *         required=true,

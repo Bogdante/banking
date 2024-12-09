@@ -41,6 +41,11 @@ class ClientEntity
         return new self(Client::where('name', $name)->first());
     }
 
+    public static function getById(int $id): self
+    {
+        return new self(Client::where('id', $id)->first());
+    }
+
     public function getId(): int
     {
         return $this->client->id;
