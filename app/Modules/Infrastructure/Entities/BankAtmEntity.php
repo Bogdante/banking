@@ -56,15 +56,15 @@ class BankAtmEntity
 
     ): self {
         $bankAtm = self::create(
-        $bank,
-        $name,
-        $address,
-        $status,
-        $location,
-        $canTopUp,
-        $canWithdraw,
-        $amount,
-        $serviceCost
+            $bank,
+            $name,
+            $address,
+            $status,
+            $location,
+            $canTopUp,
+            $canWithdraw,
+            $amount,
+            $serviceCost
         );
 
         $bank->addAtmsAmount();

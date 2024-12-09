@@ -4,6 +4,7 @@ namespace App\Modules\Infrastructure\Entities;
 use App\Modules\Common\Money;
 use App\Modules\Bank\BankEntity;
 use App\Modules\Infrastructure\Models\BankOffice;
+use Illuminate\Support\Collection;
 
 
 class BankOfficeEntity
@@ -72,6 +73,17 @@ class BankOfficeEntity
         $bank->addOfficesAmount();
 
         return $bankOffice;
+    }
+
+    public static function findAllForBank(int $bankId): Collection
+    {
+        return BankOffice::where('bank_id', $bankId)->get();
+    }
+
+    public static function findAllForBankWhereCanCredit(int $bankId): Collection
+    {
+        return BankOffice::where('bank_id', $bankId)
+            ->where('can_credit', true)->get();
     }
 
     public static function getByName(string $name): self

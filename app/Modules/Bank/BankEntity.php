@@ -4,7 +4,7 @@ namespace App\Modules\Bank;
 
 use App\Modules\Bank\Bank;
 use App\Modules\Common\Money;
-
+use Illuminate\Support\Collection;
 class BankEntity {
     private Bank $bank;
 
@@ -34,6 +34,14 @@ class BankEntity {
     public static function getById(int $id): self
     {
         return new self(Bank::find($id));
+    }
+
+    /**
+     * @return Collection
+     */
+    public static function getAllModels(): Collection
+    {
+        return Bank::all();
     }
 
     public static function getByName(string $name): self
