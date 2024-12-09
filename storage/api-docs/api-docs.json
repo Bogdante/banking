@@ -38,12 +38,80 @@
                     }
                 ]
             }
+        },
+        "/api/bank/{bank}/offices": {
+            "get": {
+                "tags": [
+                    "Bank Infrastructure"
+                ],
+                "summary": "Получить список всех офисов банка",
+                "description": "Возвращает список всех офисов банка",
+                "operationId": "getAllBankOffices",
+                "parameters": [
+                    {
+                        "name": "bank",
+                        "in": "path",
+                        "description": "id банка",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Не найден банк"
+                    }
+                }
+            }
+        },
+        "/api/bank/{bank}/can-credit/offices": {
+            "get": {
+                "tags": [
+                    "Bank Infrastructure"
+                ],
+                "summary": "Получить список всех офисов банка ( в которых можно взять кредит )",
+                "description": "Возвращает список всех офисов банка в которых можно взять кредит",
+                "operationId": "getAllBankCreditOffices",
+                "parameters": [
+                    {
+                        "name": "bank",
+                        "in": "path",
+                        "description": "id банка",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Не найден банк"
+                    }
+                }
+            }
         }
     },
     "tags": [
         {
             "name": "Bank",
             "description": "Bank"
+        },
+        {
+            "name": "Bank Infrastructure",
+            "description": "Bank Infrastructure"
         }
     ]
 }
