@@ -13,3 +13,4 @@ Route::get('/bank/{bank}/can-credit/offices', [BankInfrastructureController::cla
 Route::post('/employees', [UserController::class, 'createEmployee']);
 Route::post('/clients', [UserController::class, 'createClient']);
 Route::post('/payment-accounts', [AccountController::class, 'createPaymentAccount']);
+Route::post('/credit-accounts', [AccountController::class, 'createCreditAccount']);

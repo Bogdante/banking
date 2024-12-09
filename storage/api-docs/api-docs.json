@@ -114,6 +114,147 @@
                 }
             }
         },
+        "/credit-accounts": {
+            "post": {
+                "tags": [
+                    "Accounts"
+                ],
+                "summary": "Создание кредитного счёта",
+                "operationId": "b88aed1c96a8899161e683f14f5c0a25",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "client_id": {
+                                        "description": "ID of the client",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "bank_id": {
+                                        "description": "ID of the bank",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "employee_id": {
+                                        "description": "ID of the employee who processed the credit",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "payment_account_id": {
+                                        "description": "ID of the client's payment account",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "start_credit": {
+                                        "description": "Credit start date",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2024-03-15"
+                                    },
+                                    "end_credit": {
+                                        "description": "Credit end date",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-03-15"
+                                    },
+                                    "month_credit": {
+                                        "description": "Credit term in months",
+                                        "type": "integer",
+                                        "example": 12
+                                    },
+                                    "credit_sum": {
+                                        "description": "Credit amount",
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 10000
+                                    },
+                                    "month_pay": {
+                                        "description": "Monthly payment amount",
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 1000
+                                    },
+                                    "percent_credit": {
+                                        "description": "Month rate",
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 10
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Credit account created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Credit account has been created"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "field": {
+                                                "type": "string",
+                                                "example": "client_id"
+                                            },
+                                            "message": {
+                                                "type": "string",
+                                                "example": "The selected client id is invalid."
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "error"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Database error: ..."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/banks": {
             "get": {
                 "tags": [

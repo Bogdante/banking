@@ -84,6 +84,11 @@ class EmployeeEntity
         return new self(Employee::where('name', $name)->first());
     }
 
+    public static function getById(int $id): self
+    {
+        return new self(Employee::where('id', $id)->first());
+    }
+
     public function getId(): int
     {
         return $this->employee->id;

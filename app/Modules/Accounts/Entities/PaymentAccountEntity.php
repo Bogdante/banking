@@ -51,6 +51,11 @@ class PaymentAccountEntity
             ->where('customer_id', $client->getId())->first());
     }
 
+    public static function getById(int $id): self
+    {
+        return new self(PaymentAccount::where('id', $id)->first());
+    }
+
     public function getId(): int
     {
         return $this->paymentAccount->id;
